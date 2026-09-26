@@ -109,7 +109,8 @@ leighzermods.utils.addEffect('factoricon',{type = 'unlock-recipe', recipe = 'fac
 
 -- VANILLA UPDATES
 -- make vanilla rocket part require factoricon rocket part
-leighzermods.utils.addIngredientToRecipe("rocket-part",{name="factoricon-rocket-part",amount=1})
+leighzermods.utils.addIngredientToRecipe("rocket-part",{name="factoricon-rocket-part",amount=1, type="item"})
+
 
 -- shift around tech tree a LITTLE bit to make some more sense given our new tech
 leighzermods.utils.setPrerequisites("space-science-pack",factoriconTechPrereqs)
