@@ -33,7 +33,7 @@ local factoriconTechUnit = {
       },
       time = 45
 }
-local factoriconTechPrereqs = {"rocket-control-unit"}
+local factoriconTechPrereqs = {"processing-unit"}
 local factoriconTechLocName = "Factoricon technology"
 local factoriconTechLocDesc = "The secret to space travel is in the planet's water..." -- \(e.e)/
 leighzermods.utils.createTechnology("factoricon",factoriconTechIcons,true,factoriconTechEffects,factoriconTechUnit,factoriconTechPrereqs,"a",factoriconTechLocName,factoriconTechLocDesc)
@@ -88,19 +88,19 @@ require("generated-factoricons")
 leighzermods.utils.createItemFromGeneric("factoricon","white","rocket-part",topRowSubgroup,"c",100)
 local factoriconRocketPartIngredients = {
     {
-        name="factoricon-grey-wrap_text", amount=1
+        name="factoricon-grey-wrap_text", amount=1, type="item"
     },
     {
-        name="factoricon-grey-youtube_searched_for", amount=1
+        name="factoricon-grey-youtube_searched_for", amount=1, type="item"
     },
     {
-        name="factoricon-grey-zoom_in", amount=1
+        name="factoricon-grey-zoom_in", amount=1, type="item"
     },
     {
-        name="factoricon-grey-zoom_out", amount=1
+        name="factoricon-grey-zoom_out", amount=1, type="item"
     },
     {
-        name="factoricon-grey-zoom_out_map", amount=1
+        name="factoricon-grey-zoom_out_map", amount=1, type="item"
     }
 }
 leighzermods.utils.createRecipe("factoricon-rocket-part",10,false,"crafting",factoriconRocketPartIngredients,"factoricon-rocket-part",1,topRowSubgroup,"c",true)
@@ -115,14 +115,14 @@ leighzermods.utils.addIngredientToRecipe("rocket-part",{name="factoricon-rocket-
 -- shift around tech tree a LITTLE bit to make some more sense given our new tech
 leighzermods.utils.setPrerequisites("space-science-pack",factoriconTechPrereqs)
 leighzermods.utils.addPrerequisite("rocket-silo","factoricon")
-leighzermods.utils.removePrerequisite("rocket-silo","rocket-control-unit")
+--leighzermods.utils.removePrerequisite("rocket-silo","rocket-control-unit")
 
 -- update space pack recipe so folks can still infinite research without launching a rocket
 local spaceSciencePackIngredients = {
-    {name="rocket-control-unit", amount=1},
-    {name="low-density-structure", amount=2},
-    {name="rocket-fuel", amount=2},
-    {name="radar", amount=3},
+    {name="processing-unit", amount=1, type="item"},
+    {name="low-density-structure", amount=2, type="item"},
+    {name="rocket-fuel", amount=2, type="item"},
+    {name="radar", amount=3, type="item"},
 }
 leighzermods.utils.createRecipe("space-science-pack",50,false,"crafting",spaceSciencePackIngredients,"space-science-pack",1,nil,nil,true)
 data.raw.tool["space-science-pack"].localised_description = "Used by labs for research."
